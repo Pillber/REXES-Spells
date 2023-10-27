@@ -1,0 +1,55 @@
+{
+	"Range" : {
+		"touch" : 2, 
+		"30 feet" : 7,
+		"60 feet" : 10,
+		"90 feet" : 15,
+		"120 feet" : 20
+	},
+	"AOE" : {
+		"marble sized" : 0, 
+		"fist sized" : 2, 
+		"pumpkin sized" : 4, 
+		"person sized" : 7, 
+		"room sized" : 12
+	},
+	"AOEki" : {
+		"marble sized" : 1, 
+		"fist sized" : 1, 
+		"pumpkin sized" : 2, 
+		"person sized" : 4, 
+		"room sized" : 7
+		
+	},
+	"AOEDamage" : {
+		"marble sized" : "1d4", 
+		"fist sized" : "1d6", 
+		"pumpkin sized" : "1d8", 
+		"person sized" : "2d6", 
+		"room sized" : "4d4"
+		
+	},
+	"Speed" : {
+		"stationary" : 0, 
+		"dodgeable" : 5, 
+		"semi-dodgeable" : 7, 
+		"undodgeable" : 10
+	},
+	"SpeedEffect" : {
+		"stationary" : "N/A", 
+		"dodgeable" : "DODGE DC for no damage, 30 foot range", 
+		"semi-dodgeable" : "DODGE DC for half damage, 30 foot range", 
+		"undodgeable" : "hits for full damage, 30 foot range"
+	},
+	"Permanence" : {
+		"instant" : 0, 
+		"1 turn" : 5, 
+		"2 turns" : 10, 
+		"concentration" : 5, 
+		"permanent" : 20
+	},
+	"CastingTime" : {
+		"1 action" : 0, 
+		"1 reaction" : 10
+	}
+}

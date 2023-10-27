@@ -1,0 +1,5 @@
+res://grimoire.tscn
+res://spell.tscn
+res://spell_modify.gd
+res://data.json
+res://spell.gd
