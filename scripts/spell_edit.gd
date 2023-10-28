@@ -81,6 +81,5 @@ func _on_spell_edit_selected(index):
 	var spell_name = $ItemList.get_item_text(index)
 	edit_spell(SpellData.spells[spell_name])
 	$VBoxContainer.visible = true
-	print(spell_name)
 	pass
 

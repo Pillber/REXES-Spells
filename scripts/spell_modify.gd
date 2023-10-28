@@ -41,6 +41,11 @@ func populate_spell_modify():
 	setup_option(speed, "Speed", base_spell.speed)
 	setup_option(permanence, "Permanence", base_spell.permanence)
 	setup_option(casting_time, "CastingTime", base_spell.casting_time)
+	
+	$VBoxContainer/Difficulty.text = "Difficulty: "
+	$VBoxContainer/KiCost.text = "Ki Cost: "
+	$VBoxContainer/AOEDamage.text = "AOE: "
+	$VBoxContainer/TempDamage.text = "Temp: "
 
 
 func _on_popup():
@@ -89,7 +94,6 @@ func _on_make_modified_spell():
 	var ki_cost_key = aoe.get_item_text(aoe.selected)
 	if ki_cost_key == NoChange:
 		ki_cost_key = base_spell.aoe
-	print(permanence.get_item_text(permanence.selected))
 	$VBoxContainer/KiCost.text = "Ki Cost: " + str(SpellData.data["AOEki"][ki_cost_key])
 	if permanence.get_item_text(permanence.selected) == "permanent":
 		$VBoxContainer/KiCost.text += " (Max Ki: -1)"

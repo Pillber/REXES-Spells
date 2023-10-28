@@ -4,7 +4,7 @@ const SPELL_SAVE_FILE = "user://spells.txt"
 
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)
-	var file = FileAccess.open("res://data.json", FileAccess.READ)
+	var file = FileAccess.open("res://data/data.json", FileAccess.READ)
 	SpellData.data = JSON.parse_string(file.get_as_text())
 	
 	$TabBar/SpellCreator.connect("spell_created", _on_spell_created)

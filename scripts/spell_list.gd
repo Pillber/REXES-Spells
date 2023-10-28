@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-const Spell = preload("res://spell.tscn")
+const Spell = preload("res://scenes/spell.tscn")
 
 @onready var spells = $SpellScroll/Spells
 

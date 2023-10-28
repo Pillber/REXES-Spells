@@ -1,0 +1,129 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwxuo6n47luay"]
+
+[ext_resource type="Script" path="res://scripts/spell_edit.gd" id="1_a8w0k"]
+
+[node name="SpellEdit" type="VBoxContainer"]
+visible = false
+theme_override_constants/separation = 30
+script = ExtResource("1_a8w0k")
+
+[node name="ItemList" type="ItemList" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="SpellName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Name: "
+
+[node name="Range" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RangeLabel" type="Label" parent="VBoxContainer/Range"]
+layout_mode = 2
+text = "Range:"
+
+[node name="RangeOption" type="OptionButton" parent="VBoxContainer/Range"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AOE" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AOELabel" type="Label" parent="VBoxContainer/AOE"]
+layout_mode = 2
+text = "AOE:
+"
+
+[node name="AOEOption" type="OptionButton" parent="VBoxContainer/AOE"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speed" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="VBoxContainer/Speed"]
+layout_mode = 2
+text = "Speed:
+"
+
+[node name="SpeedOption" type="OptionButton" parent="VBoxContainer/Speed"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Permanence" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PermanenceLabel" type="Label" parent="VBoxContainer/Permanence"]
+layout_mode = 2
+text = "Permanence: 
+"
+
+[node name="PermanenceOption" type="OptionButton" parent="VBoxContainer/Permanence"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CastingTime" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CastingTimeLabel" type="Label" parent="VBoxContainer/CastingTime"]
+layout_mode = 2
+text = "Casting Time:
+"
+
+[node name="CastingTimeOption" type="OptionButton" parent="VBoxContainer/CastingTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NumElements" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="NumElementsLabel" type="Label" parent="VBoxContainer/NumElements"]
+layout_mode = 2
+text = "Num Elements:"
+
+[node name="NumElementsOption" type="SpinBox" parent="VBoxContainer/NumElements"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 3.0
+value = 1.0
+
+[node name="TempChange" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TempChangeLabel" type="Label" parent="VBoxContainer/TempChange"]
+layout_mode = 2
+text = "Temp Change:"
+
+[node name="TempChangeOption" type="SpinBox" parent="VBoxContainer/TempChange"]
+layout_mode = 2
+size_flags_horizontal = 3
+allow_greater = true
+
+[node name="Mastery" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MasteryLabel" type="Label" parent="VBoxContainer/Mastery"]
+layout_mode = 2
+text = "Mastery:"
+
+[node name="MasteryOption" type="SpinBox" parent="VBoxContainer/Mastery"]
+layout_mode = 2
+size_flags_horizontal = 3
+allow_greater = true
+
+[node name="RemoveSpellButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Remove Spell"
+
+[node name="SaveEditsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Save Edits"

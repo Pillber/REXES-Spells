@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4go2pqn25rlt"]
+
+[ext_resource type="Script" path="res://scripts/spell_creator.gd" id="1_l5pcd"]
+
+[node name="SpellCreator" type="VBoxContainer"]
+theme_override_constants/separation = 30
+script = ExtResource("1_l5pcd")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+text = "SPELL CREATOR"
+horizontal_alignment = 1
+
+[node name="Name" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="Name"]
+layout_mode = 2
+text = "Name:"
+
+[node name="NameEdit" type="LineEdit" parent="Name"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Range" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="RangeLabel" type="Label" parent="Range"]
+layout_mode = 2
+text = "Range:"
+
+[node name="RangeOption" type="OptionButton" parent="Range"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AOE" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AOELabel" type="Label" parent="AOE"]
+layout_mode = 2
+text = "AOE:
+"
+
+[node name="AOEOption" type="OptionButton" parent="AOE"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speed" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="Speed"]
+layout_mode = 2
+text = "Speed:
+"
+
+[node name="SpeedOption" type="OptionButton" parent="Speed"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Permanence" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="PermanenceLabel" type="Label" parent="Permanence"]
+layout_mode = 2
+text = "Permanence: 
+"
+
+[node name="PermanenceOption" type="OptionButton" parent="Permanence"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CastingTime" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CastingTimeLabel" type="Label" parent="CastingTime"]
+layout_mode = 2
+text = "Casting Time:
+"
+
+[node name="CastingTimeOption" type="OptionButton" parent="CastingTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NumElements" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="NumElementsLabel" type="Label" parent="NumElements"]
+layout_mode = 2
+text = "Num Elements:"
+
+[node name="NumElementsOption" type="SpinBox" parent="NumElements"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 3.0
+value = 1.0
+
+[node name="TempChange" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TempChangeLabel" type="Label" parent="TempChange"]
+layout_mode = 2
+text = "Temp Change:"
+
+[node name="TempChangeOption" type="SpinBox" parent="TempChange"]
+layout_mode = 2
+size_flags_horizontal = 3
+allow_greater = true
+
+[node name="MakeSpellButton" type="Button" parent="."]
+layout_mode = 2
+text = "Make Spell"

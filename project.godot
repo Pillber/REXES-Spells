@@ -12,13 +12,13 @@ config_version=5
 
 config/name="REXES Grimoire"
 config/description="Spell Controls for the REXES Tabletop Gaming System"
-run/main_scene="res://grimoire.tscn"
+run/main_scene="res://scenes/grimoire.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://data/icon.svg"
 
 [autoload]
 
-SpellData="*res://spell_singleton.gd"
+SpellData="*res://scripts/spell_singleton.gd"
 
 [display]
 

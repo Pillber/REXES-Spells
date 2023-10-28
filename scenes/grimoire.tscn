@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://b53hmx2ucgl80"]
+
+[ext_resource type="Script" path="res://scripts/grimoire.gd" id="1_yj1u6"]
+[ext_resource type="PackedScene" uid="uid://cem42o364nacs" path="res://scenes/spell_list.tscn" id="2_oehwf"]
+[ext_resource type="PackedScene" uid="uid://d4go2pqn25rlt" path="res://scenes/spell_creator.tscn" id="3_mw3ns"]
+[ext_resource type="PackedScene" uid="uid://bwxuo6n47luay" path="res://scenes/spell_edit.tscn" id="4_tniim"]
+
+[node name="Grimiore" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yj1u6")
+
+[node name="TabBar" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="SpellList" parent="TabBar" instance=ExtResource("2_oehwf")]
+layout_mode = 2
+
+[node name="SpellCreator" parent="TabBar" instance=ExtResource("3_mw3ns")]
+visible = false
+layout_mode = 2
+
+[node name="SpellEdit" parent="TabBar" instance=ExtResource("4_tniim")]
+layout_mode = 2

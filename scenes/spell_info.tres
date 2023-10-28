@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://b6xqti2voxbdw"]
 
-[ext_resource type="Script" path="res://spell_info.gd" id="1_oboax"]
+[ext_resource type="Script" path="res://scripts/spell_info.gd" id="1_oboax"]
 
 [resource]
 script = ExtResource("1_oboax")
