@@ -89,7 +89,10 @@ func _on_make_modified_spell():
 	var ki_cost_key = aoe.get_item_text(aoe.selected)
 	if ki_cost_key == NoChange:
 		ki_cost_key = base_spell.aoe
+	print(permanence.get_item_text(permanence.selected))
 	$VBoxContainer/KiCost.text = "Ki Cost: " + str(SpellData.data["AOEki"][ki_cost_key])
+	if permanence.get_item_text(permanence.selected) == "permanent":
+		$VBoxContainer/KiCost.text += " (Max Ki: -1)"
 	var aoe_damage_key = aoe.get_item_text(aoe.selected)
 	if aoe_damage_key == NoChange:
 		aoe_damage_key = base_spell.aoe
