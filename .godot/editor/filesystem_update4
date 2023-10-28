@@ -3,3 +3,4 @@ res://scripts/spell_list.gd
 res://scenes/spell.tscn
 res://scripts/spell_modify.gd
 res://scripts/spell_edit.gd
+res://scripts/spell.gd

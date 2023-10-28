@@ -1,0 +1,137 @@
+[gd_scene load_steps=2 format=3 uid="uid://62b3mdvt4imv"]
+
+[ext_resource type="Script" path="res://scripts/spell_modify.gd" id="1_smx4j"]
+
+[node name="ModifySpellPopup" type="Popup"]
+title = "Modify Spell"
+position = Vector2i(0, 100)
+size = Vector2i(450, 450)
+script = ExtResource("1_smx4j")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MODIFYING SPELL"
+horizontal_alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Name:"
+
+[node name="Range" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RangeLabel" type="Label" parent="VBoxContainer/Range"]
+layout_mode = 2
+text = "Range:"
+
+[node name="RangeOption" type="OptionButton" parent="VBoxContainer/Range"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AOE" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AOELabel" type="Label" parent="VBoxContainer/AOE"]
+layout_mode = 2
+text = "AOE:
+"
+
+[node name="AOEOption" type="OptionButton" parent="VBoxContainer/AOE"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Speed" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SpeedLabel" type="Label" parent="VBoxContainer/Speed"]
+layout_mode = 2
+text = "Speed:
+"
+
+[node name="SpeedOption" type="OptionButton" parent="VBoxContainer/Speed"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Permanence" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PermanenceLabel" type="Label" parent="VBoxContainer/Permanence"]
+layout_mode = 2
+text = "Permanence: 
+"
+
+[node name="PermanenceOption" type="OptionButton" parent="VBoxContainer/Permanence"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CastingTime" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CastingTimeLabel" type="Label" parent="VBoxContainer/CastingTime"]
+layout_mode = 2
+text = "Casting Time:
+"
+
+[node name="CastingTimeOption" type="OptionButton" parent="VBoxContainer/CastingTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NumElements" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="NumElementsLabel" type="Label" parent="VBoxContainer/NumElements"]
+layout_mode = 2
+text = "Num Elements:"
+
+[node name="NumElementsOption" type="SpinBox" parent="VBoxContainer/NumElements"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 3.0
+value = 1.0
+
+[node name="TempChange" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TempChangeLabel" type="Label" parent="VBoxContainer/TempChange"]
+layout_mode = 2
+text = "Temp Change:"
+
+[node name="TempChangeOption" type="SpinBox" parent="VBoxContainer/TempChange"]
+layout_mode = 2
+size_flags_horizontal = 3
+allow_greater = true
+
+[node name="MakeSpellButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Make Spell"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Difficulty: "
+
+[node name="KiCost" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ki Cost"
+
+[node name="AOEDamage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "AOE:"
+
+[node name="TempDamage" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Temp:"

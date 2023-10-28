@@ -1,5 +1,7 @@
 extends VBoxContainer
 
+const SpellModify = preload("res://scenes/spell_modify.tscn")
+
 var spell_data: Resource
 
 func _ready():
@@ -36,5 +38,8 @@ func _toggle_extra_info():
 	$ExtraInfo.visible = not $ExtraInfo.visible
 
 func _on_create_modified_spell():
-	$ModifySpellPopup.base_spell = spell_data
-	$ModifySpellPopup.popup()
+	var spell_modify = SpellModify.instantiate()
+	spell_modify.base_spell = spell_data
+	add_child(spell_modify)
+	spell_modify.connect("popup_hide", func(): spell_modify.queue_free())
+	spell_modify.popup()
