@@ -1,21 +1,23 @@
 extends Resource
 
-@export var name: String
-@export var range: String
-@export var aoe: String
-@export var speed: String
-@export var permanence: String
-@export var casting_time: String
-@export var num_elements: int
-@export var temp_change: int
+# saveable data entries
+var name: String
+var range: String
+var aoe: String
+var speed: String
+var permanence: String
+var casting_time: String
+var num_elements: int
+var temp_change: int
+var mastery = 0 #max(difficulty - mastery * 2, ceil(difficulty / 2))
+var difficulty_modifier = 0
 
+# calculated data entries
 var difficulty = 0
 var current_difficulty = 0
 var ki_cost = 0
 var aoe_damage = 0
 var temp_damage = ""
-var mastery = 0 #max(difficulty - mastery * 2, ceil(difficulty / 2))
-var mastered = false
 
 
 func save():
@@ -61,7 +63,7 @@ func calculate_difficulty():
 	calculate_current_difficulty()
 	
 func calculate_current_difficulty():
-	current_difficulty = max(difficulty - mastery * 2, ceil(difficulty / 2))
+	current_difficulty = max(difficulty - mastery * 2, ceil(difficulty / 2)) + difficulty_modifier
 	
 func calculate_damage():
 	aoe_damage = SpellData.data["AOEDamage"][aoe]

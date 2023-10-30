@@ -36,8 +36,8 @@ func populate_spell_edit():
 	for casting_type in SpellData.data["CastingTime"].keys():
 		casting_time.add_item(casting_type)
 		
-func remove_spell_from_list(spell):
-	$ItemList.remove_item(select_from_text($ItemList, spell.name))
+func remove_spell_from_list(spell_to_remove):
+	$ItemList.remove_item(select_from_text($ItemList, spell_to_remove.name))
 
 func select_from_text(option_button, text):
 	for index in range(option_button.item_count):
@@ -45,8 +45,8 @@ func select_from_text(option_button, text):
 			return index
 	return -1
 
-func edit_spell(spell):
-	self.spell = spell
+func edit_spell(spell_to_edit):
+	self.spell = spell_to_edit
 	spell_name.text = "Name: " + str(spell.name)
 	range.select(select_from_text(range, spell.range))
 	aoe.select(select_from_text(aoe, spell.aoe))
@@ -78,8 +78,8 @@ func _on_spell_remove():
 	emit_signal("remove_spell", spell)
 
 func _on_spell_edit_selected(index):
-	var spell_name = $ItemList.get_item_text(index)
-	edit_spell(SpellData.spells[spell_name])
+	var edit_spell_name = $ItemList.get_item_text(index)
+	edit_spell(SpellData.spells[edit_spell_name])
 	$VBoxContainer.visible = true
 	pass
 

@@ -8,11 +8,13 @@ func _ready():
 	$CastSpellButton.connect("pressed", _on_cast_spell)
 	$ToggleInfoButton.connect("pressed", _toggle_extra_info)
 	$CastModifiedButton.connect("pressed", _on_create_modified_spell)
+	$DifficultyContainer/AddDifficulty.connect("pressed", _on_add_difficulty)
+	$DifficultyContainer/ReduceDifficulty.connect("pressed", _on_reduce_difficulty)
 
 func populate_spell():
 	name = spell_data.name
 	$Name.text = "Spell Name: " + str(spell_data.name)
-	$Difficulty.text = "Difficulty: " + str(spell_data.current_difficulty)
+	$DifficultyContainer/Difficulty.text = "Difficulty: " + str(spell_data.current_difficulty)
 	$KiCost.text = "Ki Cost: " + str(spell_data.ki_cost)
 	if spell_data.permanence == "permanent":
 		$KiCost.text += " (Max Ki: -1)"
@@ -27,6 +29,24 @@ func populate_spell():
 	$ExtraInfo/CastingTime.text = "Casting Time: " + str(spell_data.casting_time)
 	$ExtraInfo/NumElements.text = "Number of Elements: " + str(spell_data.num_elements)
 	$ExtraInfo/TempChange.text = "Temp Change: " + str(spell_data.temp_change)
+
+
+func display_difficulty():
+	spell_data.calculate_current_difficulty()
+	$DifficultyContainer/Difficulty.text = "Difficulty: " + str(spell_data.current_difficulty)
+	if spell_data.difficulty_modifier != 0:
+		$DifficultyContainer/Difficulty.text += " (" + ("+" if spell_data.difficulty_modifier > 0 else "") + str(spell_data.difficulty_modifier) + ")"
+
+
+func _on_add_difficulty():
+	spell_data.difficulty_modifier += 1
+	display_difficulty()
+	pass
+
+func _on_reduce_difficulty():
+	spell_data.difficulty_modifier -= 1
+	display_difficulty()
+	pass
 	
 
 func _on_cast_spell():

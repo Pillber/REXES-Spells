@@ -1,6 +1,5 @@
 res://scenes/grimoire.tscn
-res://scripts/spell_list.gd
 res://scenes/spell.tscn
-res://scripts/spell_modify.gd
-res://scripts/spell_edit.gd
+res://scenes/spell_creator.tscn
 res://scripts/spell.gd
+res://scripts/spell_info.gd
