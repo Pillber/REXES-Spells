@@ -12,11 +12,15 @@ const NoChange = "No change"
 
 var base_spell = null
 var default_indexes = []
+var local_difficulty_modifier = 0
+var modified_difficulty_modifier = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("about_to_popup", _on_popup)
 	$VBoxContainer/MakeSpellButton.connect("pressed", _on_make_modified_spell)
+	$VBoxContainer/DifficultyContainer/AddDifficulty.connect("pressed", _on_add_difficulty)
+	$VBoxContainer/DifficultyContainer/ReduceDifficulty.connect("pressed", _on_reduce_difficulty)
 	
 func setup_option(option_button, category, base_spell_value):
 	var index = -1
@@ -42,7 +46,7 @@ func populate_spell_modify():
 	setup_option(permanence, "Permanence", base_spell.permanence)
 	setup_option(casting_time, "CastingTime", base_spell.casting_time)
 	
-	$VBoxContainer/Difficulty.text = "Difficulty: "
+	$VBoxContainer/DifficultyContainer/Difficulty.text = "Difficulty: "
 	$VBoxContainer/KiCost.text = "Ki Cost: "
 	$VBoxContainer/AOEDamage.text = "AOE: "
 	$VBoxContainer/TempDamage.text = "Temp: "
@@ -51,6 +55,7 @@ func populate_spell_modify():
 func _on_popup():
 	$VBoxContainer/Name.text = "Name: " + base_spell.name
 	populate_spell_modify()
+	local_difficulty_modifier = base_spell.difficulty_modifier
 	range.select(default_indexes[0])
 	aoe.select(default_indexes[1])
 	speed.select(default_indexes[2])
@@ -87,10 +92,30 @@ func calculate_difficulty_modifier():
 	var all_modifier = range_modifier + aoe_modifier + speed_modifier + permanence_modifier + casting_time_modifier + temp_change_modifier
 	all_modifier *= max(1, base_spell.num_elements - num_elements.value + 1)
 	
-	return all_modifier
+	modified_difficulty_modifier = all_modifier
+	
+	
+# Difficulty: 10 (+2) (+6)   (+)(-)
+
+func _on_add_difficulty():
+	local_difficulty_modifier += 1
+	display_difficulty()
+
+func _on_reduce_difficulty():
+	if base_spell.difficulty + modified_difficulty_modifier + local_difficulty_modifier > 1:
+		local_difficulty_modifier -= 1
+	display_difficulty()
+
+func display_difficulty():
+	calculate_difficulty_modifier()
+	$VBoxContainer/DifficultyContainer/Difficulty.text = "Difficulty: " + str(base_spell.difficulty + modified_difficulty_modifier + local_difficulty_modifier)
+	if modified_difficulty_modifier != 0:
+		$VBoxContainer/DifficultyContainer/Difficulty.text += " (" + ("+" if modified_difficulty_modifier > 0 else "") + str(modified_difficulty_modifier) + " modifications)"
+	if local_difficulty_modifier != 0:
+		$VBoxContainer/DifficultyContainer/Difficulty.text += " (" + ("+" if local_difficulty_modifier > 0 else "") + str(local_difficulty_modifier) + " extras)"
 
 func _on_make_modified_spell():
-	$VBoxContainer/Difficulty.text = "Difficulty: " + str(base_spell.current_difficulty + calculate_difficulty_modifier())
+	display_difficulty()
 	var ki_cost_key = aoe.get_item_text(aoe.selected)
 	if ki_cost_key == NoChange:
 		ki_cost_key = base_spell.aoe

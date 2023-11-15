@@ -30,10 +30,12 @@ func save():
 		"casting_time" : casting_time,
 		"num_elements" : num_elements,
 		"temp_change" : temp_change,
-		"mastery" : mastery
+		"mastery" : mastery,
+		"difficulty_modifier" : difficulty_modifier
 	}
 
-func _init(data = {"name":"Test Spell", "range":"touch", "aoe":"marble sized", "speed":"stationary", "permanence":"instant", "casting_time":"1 action", "num_elements":1, "temp_change":0, "mastery":0}):
+func _init(data = {"name":"Test Spell", "range":"touch", "aoe":"marble sized", "speed":"stationary", "permanence":"instant", "casting_time":"1 action", \
+					"num_elements":1, "temp_change":0, "mastery":0, "difficulty_modifier":0}):
 	name = data["name"]
 	range = data["range"]
 	aoe = data["aoe"]
@@ -43,6 +45,7 @@ func _init(data = {"name":"Test Spell", "range":"touch", "aoe":"marble sized", "
 	num_elements = data["num_elements"]
 	temp_change = data["temp_change"]
 	mastery = data["mastery"]
+	difficulty_modifier = data["difficulty_modifier"]
 	
 	calculate_difficulty()
 	calculate_damage()

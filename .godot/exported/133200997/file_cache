@@ -1,3 +1,7 @@
-res://grimoire.tscn::0f155472028b3dce576ccba64fe5b7df::1698368308::res://.godot/exported/133200997/export-5b988ea17f27344520dca996eaf20cb7-grimoire.scn
-res://spell.tscn::4a479137fdc89c1fa3fb163ee46dff6e::1698367876::res://.godot/exported/133200997/export-8d847399ee3cc24c8d6e24bd430ff0a1-spell.scn
-res://spell_info.tres::8d70a42314e4e5b1782b4a4511365d09::1698120229::res://.godot/exported/133200997/export-d874495a669c1fc40524422481981e57-spell_info.res
+res://scenes/grimoire.tscn::42afd2b241bc5acf51edb1d9dfbb6a69::1700090744::res://.godot/exported/133200997/export-742870b406d874a2db2abb45d0a1e4d8-grimoire.scn
+res://scenes/spell.tscn::e10fd57737fe33ae91057e8080295dd0::1700090744::res://.godot/exported/133200997/export-0a7020bd64f4d789d22ba60000483e3d-spell.scn
+res://scenes/spell_creator.tscn::c713d8cf383c6e07969dea2917429020::1700090744::res://.godot/exported/133200997/export-5ea99d3e8c94efcce674d706e3f354f6-spell_creator.scn
+res://scenes/spell_edit.tscn::28f744534664a71d698e17f75932d914::1698522743::res://.godot/exported/133200997/export-0069ca98cd2b645bead274af63998d3d-spell_edit.scn
+res://scenes/spell_info.tres::9e3a285e4cfccd8893bf9d57a029c616::1698522743::res://.godot/exported/133200997/export-4ee1b60844e88d8cdd84760e1187684c-spell_info.res
+res://scenes/spell_list.tscn::005ff753e25e3db845e062b13ce34d61::1698522743::res://.godot/exported/133200997/export-031e9ec0f4cce925865ff28fcaf0df1a-spell_list.scn
+res://scenes/spell_modify.tscn::612e66b5d9795b45341bed2abfa070d4::1700090744::res://.godot/exported/133200997/export-b71328a1ddbc0a02898f82104674717a-spell_modify.scn

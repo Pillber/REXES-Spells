@@ -41,4 +41,5 @@ func _on_make_spell():
 	data["num_elements"] = (num_elems.value)
 	data["temp_change"] = (temp_change.value)
 	data["mastery"] = 0
+	data["difficulty_modifier"] = 0
 	emit_signal("spell_created", SpellData.SpellInfo.new(data))

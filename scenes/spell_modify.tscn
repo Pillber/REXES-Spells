@@ -5,7 +5,8 @@
 [node name="ModifySpellPopup" type="Popup"]
 title = "Modify Spell"
 position = Vector2i(0, 100)
-size = Vector2i(450, 450)
+size = Vector2i(450, 474)
+visible = true
 script = ExtResource("1_smx4j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -116,6 +117,22 @@ text = "Make Spell"
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="DifficultyContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="VBoxContainer/DifficultyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Difficulty: "
+
+[node name="AddDifficulty" type="Button" parent="VBoxContainer/DifficultyContainer"]
+layout_mode = 2
+text = "(+)"
+
+[node name="ReduceDifficulty" type="Button" parent="VBoxContainer/DifficultyContainer"]
+layout_mode = 2
+text = "(-)"
 
 [node name="Difficulty" type="Label" parent="VBoxContainer"]
 layout_mode = 2

@@ -2,4 +2,7 @@ res://scenes/grimoire.tscn
 res://scenes/spell.tscn
 res://scenes/spell_creator.tscn
 res://scripts/spell.gd
-res://scripts/spell_info.gd
+res://scripts/spell_edit.gd
+res://scenes/spell_modify.tscn
+res://README.md
+res://scripts/spell_modify.gd

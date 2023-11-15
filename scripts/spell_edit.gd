@@ -68,6 +68,7 @@ func _on_spell_done_editing():
 	data["num_elements"] = (num_elements.value)
 	data["temp_change"] = (temp_change.value)
 	data["mastery"] = (mastery.value)
+	data["difficulty_modifier"] = spell.difficulty_modifier
 	
 	spell = SpellData.SpellInfo.new(data)
 	emit_signal("spell_edited", spell)
